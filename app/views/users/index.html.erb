@@ -32,6 +32,20 @@
   </tbody>
 </table>
 
+<div id = "nav">
+  <button><%= link_to 'Newest', users_path(size: @size) %></button>
+  <% unless @users.include?(User.first) %>
+    <button><%= link_to "Previous #{@size} users", users_path(page: @page - 1, size: @size) %></button>
+  <% end %>
+  <% unless @users.include?(User.last) %>
+    <button><%= link_to "Next #{@size} users", users_path(page: @page + 1, size: @size) %></button>
+  <% end %>
+
+  <button><%= link_to "2", users_path(size: 2) %></button>
+  <button><%= link_to "10", users_path(size: 10) %></button>
+  <button><%= link_to "50", users_path(size: 50) %></button>
+</div>
+
 <br>
 
 <%= link_to 'New User', new_user_path %>
