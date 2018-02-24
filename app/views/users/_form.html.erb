@@ -13,22 +13,22 @@
 
   <div class="field">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :user_first_name %>
+    <%= form.text_field :first_name, id: :user_first_name, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :user_last_name %>
+    <%= form.text_field :last_name, id: :user_last_name, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
+    <%= form.text_field :email, id: :user_email, required: true %>
   </div>
 
   <div class="field">
-    <%= form.label :tags %>
-    <%= form.text_field :tags, id: :tags, value: user.tags.pluck(:name)%>
+    <%= form.label "Tags (optionel)" %>
+    <%= form.text_field :tags, id: :tags, value: user.tags.pluck(:name), placeholder: "tag1 tag2 tag3..." %>
   </div>
 
   <div class="actions">
